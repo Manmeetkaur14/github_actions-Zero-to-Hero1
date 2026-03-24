@@ -1,0 +1,10 @@
+name: Shubham
+Location: Pune
+dob: 14/06/2000
+hobbies:
+  - teaching
+  - movies
+  - workouts
+  - speaking
+Experience:
+  devops: linux:2, docker:1, kubernetes:1,
