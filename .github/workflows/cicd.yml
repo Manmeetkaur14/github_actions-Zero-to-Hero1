@@ -35,9 +35,9 @@ jobs:
       - name: Test the container
         run: echo "Testing the container"
 
-  deploy:
-    if: inputs.environment == "dev"
-    needs: [build, test]
+ deploy:
+  if: ${{ github.event.inputs.environment == 'dev' }}
+  needs: [build, test]
     runs-on: ubuntu-latest
     steps:
       - name: Deploying the app
