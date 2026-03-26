@@ -1,0 +1,52 @@
+name: Portfolio
+
+
+on:
+    push:
+        branches: [main]
+
+permissions:
+    page: write  # Allow Workflow to deploy / update Github pages
+    id-token: write  # Allow workflow to genrate a secure Indentity token
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        
+
+        # Show in Github that  my site is deployed on github pages 
+        # & give me the link
+        environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+        
+        #Bring my project code into the machine
+        # get access to your portfolio code via pre-built actions
+        # clone or checks out the code where this workflow is written 
+        # step 1  
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+        #Setup github pages
+        #Prepare Github to host my website
+        #Step 2
+            - name: setup Github pages
+              uses: actions/configure-github-pages@v4
+
+        #static code artifacts 
+        #Send my website file(HTML/Css) for deployment
+        #step 3
+            - name: upload static files
+              uses: actions/upload-pages-artifact@v4
+        
+        #Make my website Live on Internet 
+        #make page live
+        #Step 4 
+
+            - name: deploy to github pages
+              uses: actions/deploy-page@v4
+
+
+
+
