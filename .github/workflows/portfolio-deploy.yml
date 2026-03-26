@@ -4,6 +4,7 @@ name: Portfolio
 on:
     push:
         branches: [main]
+    workflow_dispatch:
 
 permissions:
     page: write  # Allow Workflow to deploy / update Github pages
