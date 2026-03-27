@@ -5,66 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manmeet Kaur | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-body{
-  background:linear-gradient(135deg,#667eea,#764ba2);
-  color:#fff;
+body {
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#0f172a;
+  color:white;
 }
 
-header{
+/* HEADER */
+header {
   text-align:center;
-  padding:50px 20px;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#667eea,#764ba2);
 }
 
-header h1{font-size:2.8rem;}
-header p{color:#ddd;margin-top:10px;}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
+header h1 {
+  font-size:3rem;
 }
 
-.card{
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(10px);
-  padding:25px;
-  border-radius:15px;
-  margin-bottom:20px;
-}
-
-h2{margin-bottom:15px;}
-
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.skill{
-  background:rgba(255,255,255,0.2);
-  padding:8px 15px;
-  border-radius:20px;
-}
-
-.btn{
-  display:inline-block;
+header p {
   margin-top:10px;
-  padding:10px 20px;
+  color:#ddd;
+}
+
+/* SOCIAL */
+.social a {
+  margin:10px;
+  display:inline-block;
+  padding:10px 18px;
   border-radius:25px;
-  background:#fff;
+  background:white;
   color:#333;
   text-decoration:none;
   font-weight:600;
 }
 
-.btn:hover{
+.social a:hover {
   background:#000;
-  color:#fff;
+  color:white;
+}
+
+/* SECTION */
+.container {
+  padding:40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.card {
+  background:#1e293b;
+  padding:25px;
+  border-radius:15px;
+  margin-bottom:20px;
+}
+
+/* SKILLS */
+.skills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill {
+  background:#667eea;
+  padding:8px 15px;
+  border-radius:20px;
+}
+
+/* PROJECT */
+.project {
+  background:#334155;
+  padding:15px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+/* BUTTON */
+.btn {
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  background:#667eea;
+  border-radius:25px;
+  text-decoration:none;
+  color:white;
+}
+
+.btn:hover {
+  background:black;
 }
 </style>
 </head>
@@ -72,85 +103,71 @@ h2{margin-bottom:15px;}
 <body>
 
 <header>
-  <h1>Manmeet Kaur 👋</h1>
-  <p>IT Infrastructure Analyst II | Linux Admin | DevOps Learner</p>
+  <h1>Hi, I'm Manmeet 👋</h1>
+  <p>Service Desk Analyst | Linux Admin | DevOps Learner 🚀</p>
+
+  <div class="social">
+    <a href="https://github.com/Manmeetkaur14">GitHub</a>
+    <a href="https://linkedin.com/in/YOUR-LINK">LinkedIn</a>
+    <a href="#">Instagram</a>
+  </div>
 </header>
 
 <div class="container">
 
 <div class="card">
-<h2>About Me</h2>
-<p>
-RHCSA-certified Technical Support Engineer with 2+ years of experience in Linux system administration,
-Active Directory, MFA troubleshooting, and incident management. Passionate about DevOps, Docker, and AWS.
-</p>
+  <h2>About Me</h2>
+  <p>
+    RHCSA-certified Technical Support Engineer with 2+ years of experience in product support and service desk operations.
+    Skilled in MFA, Outlook, Active Directory, networking, and troubleshooting enterprise applications.
+    Currently working at Allstate and growing in DevOps 🚀
+  </p>
 </div>
 
 <div class="card">
-<h2>Skills</h2>
-<div class="skills">
-<div class="skill">Linux (RHEL)</div>
-<div class="skill">Docker</div>
-<div class="skill">Git & GitHub</div>
-<div class="skill">AWS EC2</div>
-<div class="skill">Shell Scripting</div>
-<div class="skill">SELinux</div>
-<div class="skill">firewalld</div>
-<div class="skill">Networking</div>
-<div class="skill">Apache & Nginx</div>
-<div class="skill">MariaDB</div>
-<div class="skill">ServiceNow</div>
-</div>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">MFA</div>
+    <div class="skill">Active Directory</div>
+    <div class="skill">Outlook</div>
+    <div class="skill">ServiceNow</div>
+    <div class="skill">Networking</div>
+    <div class="skill">Linux</div>
+    <div class="skill">Docker</div>
+    <div class="skill">Git</div>
+  </div>
 </div>
 
 <div class="card">
-<h2>Professional Experience</h2>
+  <h2>Experience</h2>
+  <p><strong>Allstate</strong> — Product Support</p>
+  <p>MFA, Outlook, Insurance Application Support</p>
 
-<p><strong>Allstate — IT Infrastructure Analyst II</strong> (2025–Present)</p>
-<p>• MFA & authentication troubleshooting</p>
-<p>• Linux user & permission issues</p>
-<p>• Log analysis & incident resolution</p>
+  <div class="project">
+    <p><strong>CompuCom</strong> — Service Desk</p>
+    <p>AD, MFA, Networking, Citrix, Remote Support</p>
+  </div>
+</div>
 
-<br>
+<div class="card">
+  <h2>Projects</h2>
 
-<p><strong>CompuCom — Service Desk Technician</strong> (2024–2025)</p>
-<p>• RHEL server administration</p>
-<p>• LVM, services, Apache/Nginx</p>
-<p>• Docker & troubleshooting</p>
+  <div class="project">
+    <h3>CI/CD Pipeline</h3>
+    <p>GitHub Actions project for automation</p>
+  </div>
 
-<br>
-
-<p><strong>Facile InfoServ — Quality Analyst</strong> (2022–2024)</p>
+  <div class="project">
+    <h3>Docker Banking App</h3>
+    <p>Containerized application using Docker</p>
+  </div>
 
 </div>
 
 <div class="card">
-<h2>Projects</h2>
-<p>• CI/CD Pipeline using GitHub Actions</p>
-<p>• Dockerized Banking Application</p>
-<p>• Linux Server Hardening</p>
-</div>
-
-<div class="card">
-<h2>Certifications & Education</h2>
-<p>• RHCSA Certified (2025)</p>
-<p>• BSc Computer Science (2023)</p>
-<p>• Diploma in Computer Engineering (2021)</p>
-</div>
-
-<div class="card">
-<h2>Languages</h2>
-<p>English | Hindi | Punjabi</p>
-</div>
-
-<div class="card">
-<h2>Contact</h2>
-<p>📍 Pune, India</p>
-<p>📞 9850234235</p>
-<p>📧 manmeeetkaur.14@gmail.com</p>
-
-<a href="https://github.com/Manmeetkaur14" class="btn">GitHub</a>
-<a href="https://linkedin.com/in/YOUR-LINK" class="btn">LinkedIn</a>
+  <h2>Contact</h2>
+  <p>📍 Pune, India</p>
+  <p>📧 manmeeetkaur.14@gmail.com</p>
 </div>
 
 </div>
