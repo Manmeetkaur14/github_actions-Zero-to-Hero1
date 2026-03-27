@@ -1,1 +1,123 @@
-<h1>Hello Manmeet 🔥</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manmeet Kaur | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+    body {
+      height:100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+    }
+
+    .container {
+      width:90%;
+      max-width:1000px;
+      padding:40px;
+      border-radius:20px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(15px);
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+      transition:0.3s;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      font-size:2.5rem;
+      margin-bottom:10px;
+    }
+
+    h2 {
+      font-weight:300;
+      margin-bottom:20px;
+      color:#ddd;
+    }
+
+    .skills {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .skill {
+      padding:10px 15px;
+      border-radius:20px;
+      background: rgba(255,255,255,0.2);
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .skill:hover {
+      background: white;
+      color:#333;
+      transform: translateY(-5px);
+    }
+
+    .section {
+      margin-top:30px;
+    }
+
+    .btn {
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 20px;
+      border-radius:30px;
+      background:white;
+      color:#333;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover {
+      background:#000;
+      color:#fff;
+      transform: scale(1.1);
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Hi, I'm Manmeet 👋</h1>
+  <h2>Linux Admin | DevOps Learner | AWS Enthusiast</h2>
+
+  <div class="section">
+    <p>I have 3+ years of experience in Linux Administration, OS hardening, and troubleshooting. Currently learning DevOps tools like Docker, GitHub Actions, and AWS to build scalable systems.</p>
+  </div>
+
+  <div class="section">
+    <h3>Skills</h3>
+    <div class="skills">
+      <div class="skill">Linux</div>
+      <div class="skill">Docker</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">AWS EC2</div>
+      <div class="skill">Shell Scripting</div>
+      <div class="skill">Networking</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Projects</h3>
+    <p>• CI/CD Pipeline using GitHub Actions</p>
+    <p>• Dockerized Banking App</p>
+    <p>• Linux Server Hardening</p>
+  </div>
+
+  <a href="https://github.com/Manmeetkaur14" class="btn">View GitHub</a>
+</div>
+
+</body>
+</html>
