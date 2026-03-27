@@ -30,7 +30,7 @@ jobs:
       - name: Upload static files
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./index.html   # 👈 FIX
+          path: "."  # 👈 FIX
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
