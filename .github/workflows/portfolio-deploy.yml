@@ -3,7 +3,6 @@ name: portfolio
 on:
   push:
     branches: [main]
-  workflow_dispatch:
 
 permissions:
   pages: write
@@ -20,13 +19,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Debug files
+        run: |
+          pwd
+          ls -la
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
       - name: Upload static files
         uses: actions/upload-pages-artifact@v4
         with:
-          path: .
+          path: ./index.html   # 👈 FIX
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
