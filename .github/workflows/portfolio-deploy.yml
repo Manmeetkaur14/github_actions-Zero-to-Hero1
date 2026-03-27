@@ -12,10 +12,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    environment:
-        name: github-pages
-        url:  ${{ steps.deployment.outputs:page_url }}
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,7 +22,7 @@ jobs:
       - name: Upload static files
         uses: actions/upload-pages-artifact@v4
         with:
-          path: .   # VERY IMPORTANT
+          path: .
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
