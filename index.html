@@ -14,8 +14,28 @@ body {
   font-family:'Poppins', sans-serif;
   background:#0f172a;
   color:white;
+  overflow-x:hidden;
 }
 
+/* FLOATING ICONS */
+.floating i {
+  position:absolute;
+  font-size:30px;
+  animation:float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.floating i:nth-child(1){top:10%; left:10%;}
+.floating i:nth-child(2){top:20%; left:80%;}
+.floating i:nth-child(3){top:70%; left:20%;}
+.floating i:nth-child(4){top:80%; left:70%;}
+
+/* HEADER */
 header {
   text-align:center;
   padding:80px 20px;
@@ -28,14 +48,13 @@ header img {
   margin-bottom:15px;
 }
 
-header h1 {
-  font-size:2.8rem;
+/* TYPING */
+#typing {
+  font-size:1.5rem;
+  color:#fff;
 }
 
-header p {
-  color:#eee;
-}
-
+/* SOCIAL */
 .social a {
   margin:10px;
   padding:10px 15px;
@@ -43,6 +62,12 @@ header p {
   color:black;
   border-radius:20px;
   text-decoration:none;
+  transition:0.3s;
+}
+
+.social a:hover {
+  background:black;
+  color:white;
 }
 
 .container {
@@ -56,6 +81,11 @@ header p {
   padding:25px;
   border-radius:15px;
   margin-bottom:20px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:scale(1.03);
 }
 
 .skills {
@@ -84,13 +114,21 @@ header p {
 
 <body>
 
+<!-- FLOATING ICONS -->
+<div class="floating">
+  <i class="fa-brands fa-linux"></i>
+  <i class="fa-brands fa-docker"></i>
+  <i class="fa-brands fa-github"></i>
+  <i class="fa-solid fa-server"></i>
+</div>
+
 <header>
 
-<!-- 🔥 Add your image here -->
 <img src="https://via.placeholder.com/120" alt="profile">
 
 <h1>Hi, I'm Manmeet 👋</h1>
-<p><b>IT Infrastructure Analyst II</b> | Linux | AWS | DevOps 🚀</p>
+
+<p id="typing"></p>
 
 <div class="social">
 <a href="https://github.com/Manmeetkaur14" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -98,7 +136,9 @@ header p {
 <a href="https://instagram.com/YOUR-USERNAME" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 </div>
 
-<a href="Manmeet_Kaur.Sohail.pdf" download class="btn">Download CV</a>
+<a href="./Manmeet_Kaur.Sohail.pdf" target="_blank" class="btn">
+  <i class="fa-solid fa-download"></i> View CV
+</a>
 
 </header>
 
@@ -106,10 +146,8 @@ header p {
 
 <div class="card">
 <h2>About Me</h2>
-<p>
-Born in Pathankot 🎂 | Based in Pune 📍 <br>
-RHCSA Certified IT Infrastructure Analyst II with 2+ years experience in Linux, Active Directory, MFA, and troubleshooting enterprise systems.
-</p>
+<p>Born in Pathankot 🎂 | Based in Pune 📍<br>
+IT Infrastructure Analyst II with strong Linux & DevOps skills.</p>
 </div>
 
 <div class="card">
@@ -117,48 +155,28 @@ RHCSA Certified IT Infrastructure Analyst II with 2+ years experience in Linux, 
 <div class="skills">
 <div class="skill">Linux</div>
 <div class="skill">RHEL</div>
-<div class="skill">Active Directory</div>
-<div class="skill">MFA</div>
-<div class="skill">Networking</div>
 <div class="skill">Docker</div>
 <div class="skill">Git</div>
-<div class="skill">ServiceNow</div>
-<div class="skill">IAM Basics</div>
+<div class="skill">Networking</div>
+<div class="skill">MFA</div>
 </div>
 </div>
 
-<div class="card">
-<h2>Experience</h2>
-<p><b>Allstate — IT Infrastructure Analyst II</b></p>
-<p>Linux troubleshooting, MFA issues, AD, Citrix, logs, networking</p>
-
-<p><b>CompuCom — Service Desk</b></p>
-<p>Linux admin, LVM, Apache, Nginx, Docker basics</p>
 </div>
 
-<div class="card">
-<h2>Projects</h2>
+<script>
+const text = "IT Infrastructure Analyst II | Linux | AWS | DevOps 🚀";
+let i = 0;
 
-<p><b>CI/CD Pipeline</b> – GitHub Actions automation</p>
-<p><b>Docker Banking App</b> – Containerized application</p>
-
-</div>
-
-<div class="card">
-<h2>Personal Info</h2>
-<p>🎂 Birthday: (Add your DOB)</p>
-<p>🎯 Age: (Auto calculate later if needed)</p>
-<p>📍 From: Pathankot</p>
-</div>
-
-<div class="card">
-<h2>Contact</h2>
-<p>📍 Pune, India</p>
-<p>📧 manmeeetkaur.14@gmail.com</p>
-<p>📞 9850234235</p>
-</div>
-
-</div>
+function type() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 50);
+  }
+}
+type();
+</script>
 
 </body>
 </html>
