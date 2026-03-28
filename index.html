@@ -14,26 +14,7 @@ body {
   font-family:'Poppins', sans-serif;
   background:#0f172a;
   color:white;
-  overflow-x:hidden;
 }
-
-/* FLOATING ICONS */
-.floating i {
-  position:absolute;
-  font-size:30px;
-  animation:float 6s infinite ease-in-out;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
-}
-
-.floating i:nth-child(1){top:10%; left:10%;}
-.floating i:nth-child(2){top:20%; left:80%;}
-.floating i:nth-child(3){top:70%; left:20%;}
-.floating i:nth-child(4){top:80%; left:70%;}
 
 /* HEADER */
 header {
@@ -42,36 +23,19 @@ header {
   background:linear-gradient(135deg,#667eea,#764ba2);
 }
 
-header img {
-  width:120px;
-  border-radius:50%;
-  margin-bottom:15px;
-}
+header h1 { font-size:2.8rem; }
 
-/* TYPING */
-#typing {
-  font-size:1.5rem;
-  color:#fff;
-}
-
-/* SOCIAL */
 .social a {
   margin:10px;
-  padding:10px 15px;
+  padding:10px;
   background:white;
   color:black;
-  border-radius:20px;
-  text-decoration:none;
-  transition:0.3s;
+  border-radius:50%;
+  display:inline-block;
 }
 
-.social a:hover {
-  background:black;
-  color:white;
-}
-
-.container {
-  padding:40px;
+.section {
+  padding:50px;
   max-width:1100px;
   margin:auto;
 }
@@ -88,95 +52,108 @@ header img {
   transform:scale(1.03);
 }
 
-.skills {
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.skill {
-  background:#667eea;
-  padding:8px 15px;
-  border-radius:20px;
-}
-
 .btn {
-  display:inline-block;
-  margin-top:15px;
   padding:10px 20px;
-  background:#000;
+  background:#667eea;
   border-radius:25px;
   text-decoration:none;
   color:white;
+}
+
+input, textarea {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:10px;
+  border:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- FLOATING ICONS -->
-<div class="floating">
-  <i class="fa-brands fa-linux"></i>
-  <i class="fa-brands fa-docker"></i>
-  <i class="fa-brands fa-github"></i>
-  <i class="fa-solid fa-server"></i>
-</div>
-
 <header>
-
-<img src="https://via.placeholder.com/120" alt="profile">
-
 <h1>Hi, I'm Manmeet 👋</h1>
-
-<p id="typing"></p>
+<p>IT Infrastructure Analyst II | Linux | DevOps 🚀</p>
 
 <div class="social">
 <a href="https://github.com/Manmeetkaur14" target="_blank"><i class="fa-brands fa-github"></i></a>
-<a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-<a href="https://instagram.com/YOUR-USERNAME" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://linkedin.com/in/YOUR-LINK" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+<a href="https://instagram.com/YOUR-LINK" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 </div>
 
-<a href="./Manmeet_Kaur.Sohail.pdf" target="_blank" class="btn">
-  <i class="fa-solid fa-download"></i> View CV
-</a>
-
+<a href="./Manmeet_Kaur.Sohail.pdf" target="_blank" class="btn">View Resume</a>
 </header>
 
-<div class="container">
+<div class="section">
 
 <div class="card">
-<h2>About Me</h2>
-<p>Born in Pathankot 🎂 | Based in Pune 📍<br>
-IT Infrastructure Analyst II with strong Linux & DevOps skills.</p>
+<h2>Who Am I</h2>
+<p>Born in Pathankot | Based in Pune 📍<br>
+RHCSA-certified IT Infrastructure Analyst II with strong Linux & enterprise support experience.</p>
+</div>
+
+<div class="card">
+<h2>Expertise</h2>
+<p>Linux | Docker | Active Directory | MFA | Technical Support | Networking</p>
+</div>
+
+<div class="card">
+<h2>Experience</h2>
+<p><b>Allstate — IT Infrastructure Analyst II</b></p>
+<p>MFA troubleshooting, Linux issues, AD, Citrix, logs</p>
+
+<p><b>CompuCom — Service Desk</b></p>
+<p>Linux admin, LVM, Apache, Docker, system troubleshooting</p>
 </div>
 
 <div class="card">
 <h2>Skills</h2>
-<div class="skills">
-<div class="skill">Linux</div>
-<div class="skill">RHEL</div>
-<div class="skill">Docker</div>
-<div class="skill">Git</div>
-<div class="skill">Networking</div>
-<div class="skill">MFA</div>
+<p>Linux, Scripting, MySQL, Git, Docker, Networking</p>
 </div>
+
+<div class="card">
+<h2>Projects</h2>
+<p>CI/CD Pipeline using GitHub Actions</p>
+<p>Docker Banking App</p>
 </div>
+
+<div class="card">
+<h2>Certifications</h2>
+<p>RHCSA – Red Hat Certified System Administrator</p>
+</div>
+
+<div class="card">
+<h2>Education</h2>
+<p>Bachelor of Computer Science (2023)</p>
+<p>Diploma in Computer Engineering (2021)</p>
+</div>
+
+<div class="card">
+<h2>Languages</h2>
+<p>English | Hindi | Punjabi</p>
+</div>
+
+<div class="card">
+<h2>Personal Info</h2>
+<p>Email: manmeeetkaur.14@gmail.com</p>
+<p>Location: Pune, India</p>
+<p>Work Authorization: India</p>
+</div>
+
+<div class="card">
+<h2>Get in Touch</h2>
+
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
 
 </div>
 
-<script>
-const text = "IT Infrastructure Analyst II | Linux | AWS | DevOps 🚀";
-let i = 0;
-
-function type() {
-  if (i < text.length) {
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 50);
-  }
-}
-type();
-</script>
+</div>
 
 </body>
 </html>
