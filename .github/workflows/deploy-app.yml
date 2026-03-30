@@ -14,9 +14,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy with docker compose
+      - name: Debug current folder
         run: |
           pwd
-          ls
+          ls -l
+
+      - name: Show compose file
+        run: cat docker-compose.yml
+
+      - name: Deploy with Docker Compose
+        run: |
           docker compose down || true
           docker compose up -d --build
