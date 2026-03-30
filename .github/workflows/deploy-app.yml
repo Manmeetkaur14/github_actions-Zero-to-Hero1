@@ -9,7 +9,7 @@ jobs:
 
     env:
       DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
-
+      DOCKER_TAG: ${{ github.sha}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,4 +23,4 @@ jobs:
         run: cat docker-compose.yml
 
       - name: Deploy with Docker Compose
-        run: docker compose down && docker compose up -d --build --force-recreate
+        run: docker compose down && docker compose up -d --pull always
