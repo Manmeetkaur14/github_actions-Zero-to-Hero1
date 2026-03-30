@@ -23,6 +23,4 @@ jobs:
         run: cat docker-compose.yml
 
       - name: Deploy with Docker Compose
-        run: |
-          docker compose down || true
-          docker compose up -d --build --force-recreate
+        run: docker compose down && docker compose up -d --build --force-recreate
