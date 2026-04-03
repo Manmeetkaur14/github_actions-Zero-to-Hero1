@@ -27,5 +27,10 @@ jobs:
 
         secrets:
          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    trivy:
+        needs: [build]
+        uses: ./.github/workflows/image-scan.yml
+
         
 
