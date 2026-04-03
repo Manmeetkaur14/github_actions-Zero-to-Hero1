@@ -32,4 +32,9 @@ jobs:
         needs: [build]
         uses: ./.github/workflows/Image-scan.yml
 
+        
+
+        secrets:   # ✅ MUST PASS
+         DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
     
