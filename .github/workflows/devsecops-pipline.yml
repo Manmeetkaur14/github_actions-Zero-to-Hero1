@@ -24,5 +24,8 @@ jobs:
     build:
         needs: [code-quality, secrets-scan, dependency-scan, docker-scan ]
         uses: ./.github/workflows/docker-build-push.yml
+
+        secrets:
+         DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         
 
