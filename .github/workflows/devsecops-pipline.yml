@@ -27,7 +27,7 @@ jobs:
 
         secrets:
          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-
+#image scan
     trivy:
         needs: [build]
         uses: ./.github/workflows/Image-scan.yml
@@ -38,3 +38,10 @@ jobs:
          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
     
+#deply to prodection
+
+    deploy:
+        needs: [trivy]
+        uses: ./.github/workflows/deploy-to-server.yml
+        secrets:
+            DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
