@@ -1,5 +1,5 @@
 services:
   web:
-    image: manmeeetkaur/github-actions-app:${DOCKER_TAG}
+    image: manmeeetkaur/github-actions-app:latest
     ports:
       - "80:80"
