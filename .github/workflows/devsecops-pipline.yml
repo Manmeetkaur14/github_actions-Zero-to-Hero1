@@ -1,49 +1,38 @@
 name: DevSecops End To End Pipeline
 
-
 on:
-   push:
-       branches: [main]
-
-    # CI (continous Integration with security scanning)
+  push:
+    branches: [main]
 
 jobs:
-    code-quality:
-        uses: ./.github/workflows/code_quality.yml
+  code-quality:
+    uses: ./.github/workflows/code_quality.yml
 
-    secrets-scan:
-        uses: ./.github/workflows/secrets_scan.yml
+  secrets-scan:
+    uses: ./.github/workflows/secrets_scan.yml
 
-    dependency-scan:
-        uses: ./.github/workflows/dependency_scan.yml
+  dependency-scan:
+    uses: ./.github/workflows/dependency_scan.yml
     
-    docker-scan:
-        uses: ./.github/workflows/docker_lint.yml
+  docker-scan:
+    uses: ./.github/workflows/docker_lint.yml
     
-    # build once the security scans are complete
-    build:
-        needs: [code-quality, secrets-scan, dependency-scan, docker-scan ]
-        uses: ./.github/workflows/docker-build-push.yml
+  build:
+    needs: [code-quality, secrets-scan, dependency-scan, docker-scan]
+    uses: ./.github/workflows/docker-build-push.yml
+    secrets:
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
-        secrets:
-         DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-#image scan
-    trivy:
-        needs: [build]
-        uses: ./.github/workflows/Image-scan.yml
+  trivy:
+    needs: [build]
+    uses: ./.github/workflows/image_scan.yml
+    secrets:
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
-        
-
-        secrets:   # ✅ MUST PASS
-         DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-
-    
-#deply to prodection
-
-    deploy:
-        needs: [trivy]
-        uses: ./.github/workflows/deploy-to-server.yml
-        secrets:
-          EC2_SSH_HOST: ${{ secrets.EC2_SSH_HOST }}
-          EC2_SSH_USER: ${{ secrets.EC2_SSH_USER }}
-          EC2_SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+  deploy:
+    needs: [trivy]
+    uses: ./.github/workflows/deploy-to-server.yml
+    secrets:
+      EC2_SSH_HOST: ${{ secrets.EC2_SSH_HOST }}
+      EC2_SSH_USER: ${{ secrets.EC2_SSH_USER }}
+      EC2_SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
