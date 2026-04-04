@@ -101,6 +101,8 @@ jobs:
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           script: |
             echo "Running App"
+            cd ~/devops
+            docker compose -d
 
             # Install Docker (Amazon Linux)
             if ! command -v docker &> /dev/null; then
