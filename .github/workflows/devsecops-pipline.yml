@@ -43,3 +43,7 @@ jobs:
     deploy:
         needs: [trivy]
         uses: ./.github/workflows/deploy-to-server.yml
+        secrets:
+          EC2_SSH_HOST: ${{ secrets.EC2_SSH_HOST }}
+          EC2_SSH_USER: ${{ secrets.EC2_SSH_USER }}
+          EC2_SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
